@@ -4,18 +4,12 @@
 from com.connectDevice import Device
 from selenium.webdriver.support.wait import WebDriverWait
 
-desired_caps = {"platformName": "Android",
-                "platformVersion": "7.1.1",
-                "deviceName": "T203189A40323",
-                "appPackage": "com.qianmi.cash",
-                "appActivity": "com.qianmi.cash.activity.LaunchActivity",
-                "noReset": "True"
-                }
 
 class findFunction(Device):
     # 获取驱动
-    def __init__(self):
-        self.driver = Device.init_driver(self, desired_caps["platformName"],desired_caps["platformVersion"], desired_caps["deviceName"], desired_caps["appPackage"], desired_caps["appActivity"], desired_caps["noReset"])
+    def __init__(self, platformName, platformVersion, deviceName, appPackage, appActivity, noReset):
+        self.driver = Device.init_driver(self, platformName, platformVersion, deviceName, appPackage, appActivity, noReset)
+
     # 封装显示等待根据ID获取元素
     def findElement_ByID(self, element, waitTime=5):
         return WebDriverWait(self.driver, waitTime, 0.5).until(
@@ -40,8 +34,16 @@ class findFunction(Device):
             lambda driver: self.driver.find_element(*element)
         )
 
+    # 获取屏幕尺寸
+    def getScreenSize(self):
+        screensize = self.driver.get_window_size()
+        return screensize
+
     # 屏幕水平中间位置上下滑动屏幕
     def swipeByVertical(self, p1, p2):
+        screensize = self.driver.get_window_size()
+        self.screenW = screensize["width"]
+        self.screenH = screensize["height"]
         x = self.screenW / 2
         y1 = int(self.screenH * p1)
         y2 = int(self.screenH * p2)
@@ -50,6 +52,9 @@ class findFunction(Device):
 
     # 屏幕上下中间位置左右滑动屏幕
     def swipeByHorizon(self, p1, p2):
+        screensize = self.driver.get_window_size()
+        self.screenW = screensize["width"]
+        self.screenH = screensize["height"]
         y = self.screenH / 2
         x1 = int(self.screenW * p1)
         x2 = int(self.screenW * p2)

@@ -25,6 +25,4 @@ class Device:
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
         return self.driver
         # self.driver.implicitly_wait(30)
-        screensize = self.driver.get_window_size()
-        self.screenW = screensize['width']
-        self.screenH = screensize['height']
+

@@ -36,3 +36,7 @@ Horizon: mac_address from PC is C8-58-C0-FD-A5-E4
 
 send_auth_response, before call adb_auth_sign_server
 
+Horizon: mac_address from PC is A0-78-17-89-90-58
+
+send_auth_response, before call adb_auth_sign_server
+
