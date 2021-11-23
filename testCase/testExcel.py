@@ -1,7 +1,7 @@
 import xlrd
 from collections import Counter
 
-workExcel = xlrd.open_workbook(r'../ll.xls')
+workExcel = xlrd.open_workbook(r'../../ll.xls')
 
 sheet1name = workExcel.sheet_names()[0]
 
