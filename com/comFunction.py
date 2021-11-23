@@ -4,8 +4,18 @@
 from com.connectDevice import Device
 from selenium.webdriver.support.wait import WebDriverWait
 
+desired_caps = {"platformName": "Android",
+                "platformVersion": "7.1.1",
+                "deviceName": "T203189A40323",
+                "appPackage": "com.qianmi.cash",
+                "appActivity": "com.qianmi.cash.activity.LaunchActivity",
+                "noReset": "True"
+                }
 
 class findFunction(Device):
+    # 获取驱动
+    def __init__(self):
+        self.driver = Device.init_driver(self, desired_caps["platformName"],desired_caps["platformVersion"], desired_caps["deviceName"], desired_caps["appPackage"], desired_caps["appActivity"], desired_caps["noReset"])
     # 封装显示等待根据ID获取元素
     def findElement_ByID(self, element, waitTime=5):
         return WebDriverWait(self.driver, waitTime, 0.5).until(
