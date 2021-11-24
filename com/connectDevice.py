@@ -1,4 +1,13 @@
 """
+@author: Orangecat
+@contact: sugarnut@qq.com
+@software: garner
+@file: connectDevice.py
+@time: 2020/07/23 上午10:06
+@desc:
+"""
+
+"""
 连接设备
 """
 from appium import webdriver
@@ -7,6 +16,7 @@ import pytest
 
 class Device:
 
+    # 初始化连接设备
     def init_driver(self, platformName, platformVersion, deviceName, appPackage, appActivity, noReset):
         desired_caps = {}
         desired_caps["platformName"] = platformName
@@ -26,3 +36,8 @@ class Device:
         return self.driver
         # self.driver.implicitly_wait(30)
 
+    def setUp_class(self):
+        pass
+
+    def tearDown(self):
+        pass

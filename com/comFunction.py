@@ -1,12 +1,22 @@
 """
+@author: Orangecat
+@contact: sugarnut@qq.com
+@software: garner
+@file: comFunction.py
+@time: 2020/07/23 上午10:16
+@desc:
+"""
+
+"""
 封装查找元素公共方法
 """
+
 from com.connectDevice import Device
 from selenium.webdriver.support.wait import WebDriverWait
 
 
 class findFunction(Device):
-    # 获取驱动
+    # 构造函数，初始化驱动
     def __init__(self, platformName, platformVersion, deviceName, appPackage, appActivity, noReset):
         self.driver = Device.init_driver(self, platformName, platformVersion, deviceName, appPackage, appActivity, noReset)
 

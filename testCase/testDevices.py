@@ -5,7 +5,7 @@
 @author: Orangecat
 @contact: sugarnut@qq.com
 @software: garner
-@file: runTest.py
+@file: testDevices.py
 @time: 2021/11/23 上午11:06
 @desc:
 """
