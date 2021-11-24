@@ -1,4 +1,13 @@
 """
+@author: Orangecat
+@contact: sugarnut@qq.com
+@software: garner
+@file: test_androidOfficialListTime.py
+@time: 2020/09/23 上午11:06
+@desc:
+"""
+
+"""
 安卓收银下单时间统计
 """
 import random
