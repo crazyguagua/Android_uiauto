@@ -13,10 +13,17 @@
 import uiautomator2 as u2
 import time
 
-d = u2.connect("T203189A40323")
-d(resourceId="com.qianmi.cash:id/textview_category", text="面").click()
-d(resourceId="com.qianmi.cash:id/textview_name", text="加面").click()
-d(resourceId="com.qianmi.cash:id/tv_cash_to_cash").click()
-time.sleep(2)
-d(focused=True).set_text("135372564846507493 \\n")
-# d.send_keys()
+d = u2.connect("127.0.0.1:7555")
+
+# 打开抖音
+d(text="抖音").click()
+time.sleep(5)
+# 点击搜索
+d(resourceId="com.ss.android.ugc.aweme:id/fie").click()
+d(resourceId="com.ss.android.ugc.aweme:id/fl_intput_hint_container").click()
+d.send_keys("348288672")
+
+# # 循环点赞
+# while True:
+#     time.sleep(0.5)
+#     d.double_click(0.22, 0.388)
